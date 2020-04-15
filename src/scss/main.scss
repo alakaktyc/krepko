@@ -1,0 +1,201 @@
+@import "parameters.scss";
+
+/*--------------------------------------------------------------
+# main-slider *
+--------------------------------------------------------------*/
+.main-slider__item {
+  position: relative;
+  .main-slider__control {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    li {
+      width: 14px;
+      height: 14px;
+      margin: 0 10px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background-color: #fff;
+      cursor: pointer;
+      &.show {
+        width: 20px;
+        height: 20px;
+        background-color: $basic-color-orange;
+      }
+    }
+  }
+}
+
+.slide {
+  position: relative;
+  color: #fff;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+    content: "";
+  }
+  img {
+    height: 523px;
+    object-fit: cover;
+  }
+  figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .slide__title {
+      max-width: 541px;
+      font-family: 'Ubuntu-Bold', 'Arial', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 43px;
+      text-transform: uppercase;
+      line-height: 50px;
+    }
+    .slide__text {
+      font-family: 'Ubuntu-Regular', 'Arial', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# catalog *
+--------------------------------------------------------------*/
+.catalog {
+  min-height: 621px;
+}
+
+.catalog__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.catalog__item {
+  width: 242px;
+  height: 203px;
+  margin-bottom: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid #D8D8D8;
+  transition: 0.3s ease;
+  &:hover {
+    color: $basic-color-orange;
+    border: 2px solid $basic-color-orange;
+    transition: 0.3s ease;
+  }
+  figure {
+    font-family: 'Ubuntu-Regular', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    figcaption {
+      margin-top: 20px;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# advantages *
+--------------------------------------------------------------*/
+.advantages {
+  min-height: 314px;
+  background: rgba(216, 216, 216, 0.15);
+}
+
+.advantages__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.advantages__item {
+  width: 287px;
+  height: 203px;
+  display: flex;
+  align-items: center;
+  align-self: baseline;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  .advantages__text {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+/*--------------------------------------------------------------
+# news *
+--------------------------------------------------------------*/
+.news {
+  min-height: 355px;
+  border-bottom: 2px solid #D8D8D8;
+}
+
+.news__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.news__item {
+  margin-bottom: 23px;
+  position: relative;
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  figure {
+
+    img {
+      object-fit: cover;
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.6);
+      .news__date {
+        margin-left: 8px;
+        font-size: 11px;
+        line-height: 13px;
+        color: #FFFFFF;
+        opacity: 0.8;
+      }
+      .news__content {
+        margin-left: 8px;
+        font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #fff;
+      }
+    }
+  }
+}

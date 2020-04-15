@@ -1,0 +1,228 @@
+@import "parameters.scss";
+/*--------------------------------------------------------------
+# Header *
+--------------------------------------------------------------*/
+.header__logo-box {
+  background: linear-gradient(-45deg, #FFD5C1 25%, #fff 0, #fff 50%, #FFD5C1 0, #FFD5C1 75%, #fff 0);
+  background-size: 42.426406871px 42.426406871px;
+}
+.header__logo {
+  width: calc(100% - 40px);
+  max-width: 305px;
+  height: 117px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.tools-box {
+  min-height: 80px;
+  display: flex;
+  background: #FFE3D6;
+}
+
+.phone-case {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: wrap-reverse;
+  justify-content: space-between;
+  .phone-case__link {
+    display: flex;
+    img {
+      padding-right: 10px;
+    }
+    &.phone-case__link--bold {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  .phone-case__drop {
+    position: relative;
+    font-size: 11px;
+    line-height: 13px;
+    &::before {
+      position: absolute;
+      bottom: -2px;
+      right: -13px;
+      margin-top: -1.5px;
+      border: 5px solid transparent; border-top: 5px solid #000;
+      content: "";
+    }
+  }
+  .phone-case__item {
+    position: relative;
+    margin: 10px auto;
+    &.phone-case__item--width {
+      width: 165px;
+    }
+  }
+
+}
+
+.icons-case {
+  display: flex;
+  margin: 15px 0;
+  .icons-case__link {
+    position: relative;
+    width: 60px;
+    display: flex;
+    font-size: 11px;
+    .icons-case__link-round {
+      position: absolute;
+      top: -40%;
+      right: 55%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background: #D8D8D8;
+    }
+  }
+
+}
+
+.icons-case__link-content {
+  display: none;
+  font-family: 'Ubuntu-Bold', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.015em;
+}
+
+.profile-case {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  .icons-case__link--border {
+    font-family: 'Ubuntu-Bold', 'Arial', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    transition: 0.3s ease;
+    &:hover {
+      border-bottom: transparent;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+
+
+
+.search-form {
+  max-width: 345px;
+  min-height: 36px;
+  margin: auto;
+  display: flex;
+  input[type="search"] {
+    padding-left: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    min-width: 248px;
+    vertical-align: middle;
+  }
+  .search-form__btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: $basic-color-orange;
+    cursor: pointer;
+    transition: 0.3s ease;
+    img:hover {
+      transform: scale(1.1);
+      transition: 0.3s ease;
+    }
+  }
+}
+
+
+
+
+.menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  input {
+    display: flex;
+    width: 36px;
+    height: 33px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    &:checked ~ .line--first {
+      background-color: #fff;
+      transform: rotate(45deg) translate(8px);
+    }
+    &:checked ~ .line--second {
+      background-color: #fff;
+      transform: rotate(495deg) translate(4px);
+    }
+    &:checked ~ .line--third {
+      background-color: #fff;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+  span{
+    width: 36px;
+    height: 5px;
+    margin-bottom: 6px;
+    background: $basic-color-orange;
+    transition: all .5s cubic-bezier(.08,.81,.87,.71);
+  }
+  .line--first {
+    transform-origin: 4px 0;
+  }
+
+  .line--third {
+    transform-origin: bottom right;
+  }
+}
+
+.navigation-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  background: $basic-color-orange;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.6s, opacity 0.6s linear;
+  .main-menu {
+    margin-left: 10px;
+    li {
+      margin: 19px 0;
+    }
+  }
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s linear;
+}
+
+
+

@@ -1,0 +1,100 @@
+@import "parameters.scss";
+
+/*--------------------------------------------------------------
+# Footer *
+--------------------------------------------------------------*/
+.footer__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 60px 0 43px;
+}
+
+.footer__logo-box {
+  max-width: 188px;
+  max-height: 81px;
+}
+
+.footer__copyright {
+  min-height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFE3D6;
+  span {
+    box-sizing: border-box;
+    border: 10px solid transparent;
+  }
+}
+
+.contacts {
+  width: 202px;
+  font-size: 14px;
+  line-height: 16px;
+  .contacts__icon {
+    position: relative;
+    padding-left: 42px;
+    padding-bottom: 6px;
+    a {
+      transition: 0.3s ease;
+      &:hover {
+        color: $basic-color-orange;
+        transition: 0.3s ease;
+      }
+    }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      display: block;
+      width: 15px;
+      height: 15px;
+      content: '';
+    }
+    &.viber {
+      &::before {
+        background: url('../img/icons/icon_viber.svg') no-repeat center center;
+      }
+      &::after {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: url('../img/icons/icon_А1.svg') no-repeat center center;
+        content: '';
+      }
+    }
+    &.phone::before {
+      background: url('../img/icons/icon_phone.svg') no-repeat center center;
+    }
+    &.geo::before {
+      background: url('../img/icons/icon_geo.svg') no-repeat center center;
+    }
+    &.mail::before {
+      background: url('../img/icons/icon_mail.svg') no-repeat center center;
+    }
+  }
+}
+
+.subscribe {
+  p {
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  input {
+    height: 36px;
+    max-width: 266px;
+    padding-left: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    border: none;
+    outline: none;
+    background: rgba(216,216,216, 0.5);
+  }
+}
+
