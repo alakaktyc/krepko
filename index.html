@@ -24,7 +24,15 @@
                 <div class="phone-case">
                     <div class="phone-case__item phone-case__item--width">
                         <a class="phone-case__link phone-case__link--bold" href="tel:+375447736444"><img src="src/img/icons/icon_m-phone.svg" alt="">+375 (44) 77-36-444</a>
-                        <span class="phone-case__drop">Посмотреть все телефоны</span>
+                        <div class="phone-case__label">
+                            <span class="phone-case__drop">Посмотреть все телефоны</span>
+                            <div class="phone-case__sub">
+                                <a class="phone-case__link phone-case__link--bold" href="tel:+375447736444"><img src="src/img/icons/icon_m-phone.svg" alt="">+375 (44) 77-36-444</a>
+                                <a class="phone-case__link phone-case__link--bold" href="tel:+375447736444"><img src="src/img/icons/icon_m-phone.svg" alt="">+375 (44) 77-36-444</a>
+                                <a class="phone-case__link phone-case__link--bold" href="tel:+375447736444"><img src="src/img/icons/icon_m-phone.svg" alt="">+375 (44) 77-36-444</a>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="phone-case__item">
                         <button class="btn">Заказать звонок</button>
@@ -40,8 +48,6 @@
             </div>
 
 
-
-
             <div class="tool-box__inner tool-box__inner--flex">
                 <div class="icons-case">
                     <a class="icons-case__link" href="#"><img src="src/img/icons/icon_graph.svg" alt="">
@@ -54,9 +60,9 @@
                         <img src="src/img/icons/icon_basket.svg" alt="">
                         <span class="icons-case__link-round">8</span>
                         <span class="icons-case__link-content icons-case__link-content--column">
-                        <span>Корзина</span>
-                        <span>1580.82 руб</span>
-                    </span>
+                                <span>Корзина</span>
+                                <span>1580.82 руб</span>
+                            </span>
                     </a>
                 </div>
 
@@ -102,17 +108,35 @@
 <main>
     <section class="main-slider">
         <div class="main-slider__item">
-            <figure class="slide">
+            <figure class="slide active">
                 <img src="src/img/bg/bg_main-1.png" alt="">
                 <figcaption>
                     <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
                     <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
                 </figcaption>
             </figure>
+
+            <figure class="slide">
+                <img src="src/img/bg/bg_main-2.jpg" alt="">
+                <figcaption>
+                    <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
+                    <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                </figcaption>
+            </figure>
+
+
+            <figure class="slide">
+                <img src="src/img/bg/bg_main-3.jpg" alt="">
+                <figcaption>
+                    <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
+                    <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                </figcaption>
+            </figure>
+
             <ul class="main-slider__control">
-                <li></li>
-                <li class="show"></li>
-                <li></li>
+                <li class="main-slider__control-left"></li>
+                <li class="main-slider__control-center show"></li>
+                <li class="main-slider__control-right"></li>
             </ul>
         </div>
     </section>

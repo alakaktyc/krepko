@@ -166,6 +166,11 @@ img {
     transition: 0.3s ease;
   }
 }
+.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s linear;
+}
 
 /* Для Chrome */
 input[type=number]::-webkit-inner-spin-button,
