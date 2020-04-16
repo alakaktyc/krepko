@@ -80,6 +80,8 @@
 }
 
 .subscribe {
+  display: flex;
+  flex-direction: column;
   p {
     font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
     font-weight: 500;
@@ -88,13 +90,17 @@
   }
   input {
     height: 36px;
-    max-width: 266px;
+    width: calc(100% - 12px);
+    margin-bottom: 10px;
     padding-left: 10px;
     font-size: 11px;
     line-height: 13px;
     border: none;
     outline: none;
     background: rgba(216,216,216, 0.5);
+  }
+  .btn__subscribe {
+    max-width: 200px ;
   }
 }
 

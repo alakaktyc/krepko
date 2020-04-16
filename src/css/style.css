@@ -754,6 +754,11 @@ input[type=number] {
     .phone-case .phone-case__item.phone-case__item--width {
       width: 165px; }
 
+.tool-box__inner.tool-box__inner--flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
 .icons-case {
   display: flex;
   margin: 15px 0; }
@@ -789,6 +794,7 @@ input[type=number] {
   justify-content: space-between;
   margin-bottom: 10px; }
   .profile-case .icons-case__link--border {
+    margin-left: 10px;
     font-family: 'Ubuntu-Bold', 'Arial', sans-serif;
     font-size: 11px;
     font-style: normal;
@@ -1128,21 +1134,26 @@ input[type=number] {
     .contacts .contacts__icon.mail::before {
       background: url("../img/icons/icon_mail.svg") no-repeat center center; }
 
-.subscribe p {
-  font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px; }
-
-.subscribe input {
-  height: 36px;
-  max-width: 266px;
-  padding-left: 10px;
-  font-size: 11px;
-  line-height: 13px;
-  border: none;
-  outline: none;
-  background: rgba(216, 216, 216, 0.5); }
+.subscribe {
+  display: flex;
+  flex-direction: column; }
+  .subscribe p {
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px; }
+  .subscribe input {
+    height: 36px;
+    width: calc(100% - 12px);
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    border: none;
+    outline: none;
+    background: rgba(216, 216, 216, 0.5); }
+  .subscribe .btn__subscribe {
+    max-width: 200px; }
 
 /*--------------------------------------------------------------
 # Parameters * Переменные и миксины
@@ -1164,8 +1175,7 @@ input[type=number] {
     align-items: center;
     justify-content: space-between; }
   .profile-case {
-    margin-bottom: 0;
-    width: 50%; }
+    margin-bottom: 0; }
   .icons-case__link.icons-case__link--row {
     display: flex;
     flex-direction: row; }
@@ -1192,9 +1202,7 @@ input[type=number] {
     width: 225px; }
   /*--------------------------------------------------------------
   # Footer 480px
-  --------------------------------------------------------------*/
-  .subscribe input {
-    width: 266px; } }
+  --------------------------------------------------------------*/ }
 
 /*============== for landscape 576px ===========================*/
 @media screen and (min-width: 576px) {
@@ -1214,7 +1222,11 @@ input[type=number] {
     width: 270px; }
   /*--------------------------------------------------------------
   # Footer 576px
-  --------------------------------------------------------------*/ }
+  --------------------------------------------------------------*/
+  .subscribe {
+    display: block; }
+    .subscribe input {
+      width: 266px; } }
 
 /*===================================640px====================================*/
 /*============== for Tablet 768px ===========================*/

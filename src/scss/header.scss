@@ -60,6 +60,13 @@
 
 }
 
+.tool-box__inner.tool-box__inner--flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
 .icons-case {
   display: flex;
   margin: 15px 0;
@@ -100,6 +107,7 @@
   justify-content: space-between;
   margin-bottom: 10px;
   .icons-case__link--border {
+    margin-left: 10px;
     font-family: 'Ubuntu-Bold', 'Arial', sans-serif;
     font-size: 11px;
     font-style: normal;
