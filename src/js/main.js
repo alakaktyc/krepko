@@ -4,6 +4,7 @@ btnMenu.addEventListener('click', function () {
     const mobileMenu = document.querySelector('.navigation-box');
     mobileMenu.classList.toggle('active')
 });
+
 //custom select phones
 const btnDropPhones = document.querySelector('.phone-case__label');
 btnDropPhones.addEventListener('click', function (event) {
@@ -14,14 +15,45 @@ btnDropPhones.addEventListener('click', function (event) {
         phoneCaseSub.classList.toggle('active')
     }
 });
+
 //main slider
+let slideIndex = 1;
+let slideInterval = setInterval(showSlides,3500);
 const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-let slideInterval = setInterval(goToSlide,3500);
-function goToSlide(){
-    slides[currentSlide].className = 'slide';
-    currentSlide = (currentSlide+1)%slides.length;
-    slides[currentSlide].className = 'slide active';
+const blockControlSlides = document.querySelector('.main-slider__control');
+function getListControls() {
+    let listControls = [];
+    for(let i = 1; i <= slides.length; i++) {
+        let li = document.createElement('li');
+        li.className = 'circle';
+        listControls.push(li);
+    }
+    return listControls;
+}
+blockControlSlides.append(...getListControls());
+
+const btnControlsSlider = document.querySelectorAll('.main-slider__control li');
+for (let i = 0; i < btnControlsSlider.length; ++i){
+    btnControlsSlider[i].addEventListener('click', function () {
+        clearInterval(slideInterval);
+        currentSlide(slideIndex = i + 1);
+        slideInterval = setInterval(showSlides,3500);
+    });
+}
+
+function showSlides(n) {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].className = 'slide';
+    }
+    for (let i = 0; i < btnControlsSlider.length; i++) {
+        btnControlsSlider[i].className = btnControlsSlider[i].className = 'circle';
+    }
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].className = 'slide active';
+    btnControlsSlider[slideIndex - 1].className = 'circle show';
+    slideIndex++
 }
 
 for (let i = 0; i < slides.length; ++i) {
@@ -29,30 +61,11 @@ for (let i = 0; i < slides.length; ++i) {
         clearInterval(slideInterval);
     });
     slides[i].addEventListener('mouseleave', function () {
-        slideInterval = setInterval(goToSlide,3500);
+        slideInterval = setInterval(showSlides,3500);
     });
 }
 
-function nextSlide() {
-    goToSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    goToSlide(currentSlide - 1);
-}
-
-const btnControlsSlider = document.querySelectorAll('.main-slider__control li');
-for (let i = 0; i < btnControlsSlider.length; ++i){
-    btnControlsSlider[i].addEventListener('click', function () {
-        if (btnControlsSlider[i].classList.contains('main-slider__control-right')) {
-            clearInterval(slideInterval);
-            nextSlide();
-            slideInterval = setInterval(goToSlide,3500);
-        }
-        if (btnControlsSlider[i].classList.contains('main-slider__control-left')) {
-            clearInterval(slideInterval);
-            prevSlide();
-            slideInterval = setInterval(goToSlide,3500);
-        }
-    });
+showSlides(slideIndex);
+function currentSlide(n) {
+    showSlides(slideIndex = n);
 }

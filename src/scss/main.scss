@@ -25,14 +25,6 @@
         width: 20px;
         height: 20px;
         background-color: $basic-color-orange;
-        &.left {
-          transform: translate(-37px, 0);
-          transition: transform 1s ease 0.5s;
-        }
-      }
-      &.right {
-        transform: translate(37px, 0);
-        transition: transform 1s ease 0.5s;
       }
     }
   }

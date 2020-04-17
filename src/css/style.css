@@ -636,12 +636,6 @@ template {
         width: 20px;
         height: 20px;
         background-color: #EE5A14; }
-        .main-slider__item .main-slider__control li.show.left {
-          transform: translate(-37px, 0);
-          transition: transform 1s ease 0.5s; }
-      .main-slider__item .main-slider__control li.right {
-        transform: translate(37px, 0);
-        transition: transform 1s ease 0.5s; }
 
 .slide {
   position: absolute;
